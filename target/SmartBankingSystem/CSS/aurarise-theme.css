@@ -1,0 +1,173 @@
+/* ===========================
+   AURARISE BANK THEME
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+
+    background:#F4F7FB;
+
+    color:#1f2937;
+}
+
+/* COLORS */
+
+:root{
+
+    --primary:#0B2E6F;
+
+    --primary-light:#123D91;
+
+    --gold:#D4A017;
+
+    --success:#16A34A;
+
+    --danger:#DC2626;
+
+    --gray:#6B7280;
+
+    --light:#F8FAFC;
+
+    --white:#FFFFFF;
+
+}
+
+/* CARD */
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+
+    border-top:6px solid var(--gold);
+}
+
+/* LOGO */
+
+.logo{
+
+    width:160px;
+
+    margin:auto;
+
+    display:block;
+}
+
+/* BUTTON */
+
+.btn{
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:var(--gold);
+
+    color:var(--primary);
+
+    transform:translateY(-2px);
+}
+
+/* INPUT */
+
+.input{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:1px solid #d1d5db;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.input:focus{
+
+    border-color:var(--gold);
+
+    outline:none;
+
+    box-shadow:0 0 10px rgba(212,160,23,.25);
+}
+
+/* HEADINGS */
+
+.heading{
+
+    color:var(--primary);
+
+    font-size:32px;
+
+    font-weight:bold;
+}
+
+.sub-heading{
+
+    color:var(--gray);
+
+    margin-top:8px;
+}
+
+/* TABLE */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+}
+
+th{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:15px;
+}
+
+td{
+
+    padding:14px;
+
+    border-bottom:1px solid #eee;
+}
+
+tr:hover{
+
+    background:#F8FAFC;
+}
