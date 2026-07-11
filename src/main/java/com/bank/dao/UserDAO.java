@@ -12,38 +12,42 @@ import java.util.ArrayList;
 
 public class UserDAO {
 
-    public boolean registerUser(User user) {
+	public boolean registerUser(User user) {
 
-        boolean status = false;
+	    boolean status = false;
 
-        try {
+	    try {
 
-            Connection conn = DBConnection.getConnection();
+	        Connection conn = DBConnection.getConnection();
 
-            String sql = "INSERT INTO users(full_name,email,phone,password,role) VALUES(?,?,?,?,?)";
+	        String sql = "INSERT INTO users(full_name,email,phone,password,role) VALUES(?,?,?,?,?)";
 
-            PreparedStatement ps = conn.prepareStatement(sql);
+	        System.out.println("Preparing INSERT...");
 
-            ps.setString(1, user.getFullName());
-            ps.setString(2, user.getEmail());
-            ps.setString(3, user.getPhone());
-            ps.setString(4,
-                    PasswordUtil.hashPassword(
-                            user.getPassword()));
-            ps.setString(5, user.getRole());
+	        PreparedStatement ps = conn.prepareStatement(sql);
 
-            int rows = ps.executeUpdate();
+	        ps.setString(1, user.getFullName());
+	        ps.setString(2, user.getEmail());
+	        ps.setString(3, user.getPhone());
+	        ps.setString(4, PasswordUtil.hashPassword(user.getPassword()));
+	        ps.setString(5, user.getRole());
 
-            if (rows > 0) {
-                status = true;
-            }
+	        System.out.println("Executing INSERT...");
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+	        int rows = ps.executeUpdate();
 
-        return status;
-    }
+	        System.out.println("Rows Inserted = " + rows);
+
+	        if (rows > 0) {
+	            status = true;
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return status;
+	}
     public User loginUser(String email, String password) {
 
         User user = null;

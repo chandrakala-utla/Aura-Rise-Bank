@@ -21,7 +21,9 @@ public class DBConnection {
         try {
 
             Class.forName("org.postgresql.Driver");
-
+            System.out.println("URL = " + URL);
+            System.out.println("USERNAME = " + USERNAME);
+            System.out.println("PASSWORD NULL = " + (PASSWORD == null));
             conn = DriverManager.getConnection(
                     URL,
                     USERNAME,

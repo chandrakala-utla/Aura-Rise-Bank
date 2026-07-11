@@ -24,7 +24,7 @@ public RegisterServlet() {
 protected void doPost(HttpServletRequest request,
         HttpServletResponse response)
         throws ServletException, IOException {
-
+	System.out.println("========== REGISTER START ==========");
     String fullName =
             request.getParameter("fullName");
 
@@ -127,10 +127,11 @@ protected void doPost(HttpServletRequest request,
     user.setPhone(phone);
     user.setPassword(password);
     user.setRole("CUSTOMER");
+    System.out.println("Calling DAO...");
 
+    boolean status = dao.registerUser(user);
 
-    boolean status =
-            dao.registerUser(user);
+    System.out.println("Status = " + status);
 
     if(status) {
 
