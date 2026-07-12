@@ -20,9 +20,9 @@ public class UserDAO {
 
 	        Connection conn = DBConnection.getConnection();
 
-	        String sql = "INSERT INTO users(full_name,email,phone,password,role) VALUES(?,?,?,?,?)";
+	        System.out.println("Connection = " + conn);
 
-	        System.out.println("Preparing INSERT...");
+	        String sql = "INSERT INTO users(full_name,email,phone,password,role) VALUES(?,?,?,?,?)";
 
 	        PreparedStatement ps = conn.prepareStatement(sql);
 
@@ -36,13 +36,13 @@ public class UserDAO {
 
 	        int rows = ps.executeUpdate();
 
-	        System.out.println("Rows Inserted = " + rows);
+	        System.out.println("Rows = " + rows);
 
-	        if (rows > 0) {
-	            status = true;
-	        }
+	        status = rows > 0;
 
 	    } catch (Exception e) {
+
+	        System.out.println("REGISTER ERROR:");
 	        e.printStackTrace();
 	    }
 
