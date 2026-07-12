@@ -373,7 +373,7 @@ body::after{
                 name="accountNumber"
                 placeholder="Enter beneficiary account number"
                 pattern="[0-9]{8}"
-                title="Account number must contain 10 to 18 digits"
+                title="Account number must contain exactly 8 digits"
                 required>
 
         </div>
