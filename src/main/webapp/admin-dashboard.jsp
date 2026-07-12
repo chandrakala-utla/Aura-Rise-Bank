@@ -1,3 +1,11 @@
+<%
+HttpSession adminSession = request.getSession(false);
+
+if (adminSession == null || adminSession.getAttribute("admin") == null) {
+    response.sendRedirect("admin-login.jsp");
+    return;
+}
+%>
 <%@page language="java"
 contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
@@ -13,6 +21,7 @@ if(totalAccounts==null) totalAccounts=0;
 if(activeAccounts==null) activeAccounts=0;
 if(totalTransactions==null) totalTransactions=0;
 %>
+
 <%
 String currentPage = (String)request.getAttribute("page");
 
